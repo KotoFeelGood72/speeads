@@ -1,0 +1,103 @@
+.homeDetails {
+	.section_in {
+		max-width: 100%
+	}
+}
+.homeDetails_main {
+	@include flex-start;
+	align-items: flex-start;
+	margin-left: 6.7rem;
+	@include  bp($point_2) {
+		margin: 0;
+		flex-direction: column;
+		margin-bottom: 10rem;
+	}
+} 
+.homeDetails_content {
+	margin-right: 11.6rem;
+	@include bp($point_2) {
+		margin: 0;
+		order: 1;
+	}
+}
+.section_title {
+}
+.ideal_content_txt {
+}
+.btn {
+}
+.btn_icon {
+}
+.icon {
+}
+.icon-arr-right {
+}
+.homeDetails_slider_w {
+	position: relative;
+	margin-bottom: 16rem;
+	@include bp($point_2) {
+		order: 0;
+		max-width: 100%;
+		margin-bottom: 7rem;
+		position: relative;
+	}
+}
+.details_nav {
+	.swiper-button-disabled {
+		pointer-events: none;
+		button {
+			svg {
+				color: $gray2;
+				transition: all .3s ease;
+			}
+		}
+	}
+}
+.nav_slider {
+	position: absolute;
+	top: -8rem;
+	right: 6.8rem;
+	@include flex-end;
+	width: 100%;
+	@include bp($point_2) {
+		display: none;
+	}
+}
+.details_nav_btn {
+	width: 2.5rem;
+	height: 4.3rem;
+	@include bp($point_2) {
+		background-color: $dark;
+		width: 5rem;
+		height: 5rem;
+		padding: 1.5rem;
+	}
+	button, svg {
+		width: 100%;
+		height: 100%;
+		@include flex-center;
+		color: $red;
+		transition: all .3s ease;
+	}
+	
+	&:not(:last-child) {
+		margin-right: 12rem;
+	}
+}
+.nav_btn {
+}
+.icon-left {
+}
+.icon-right {
+}
+.details_slider {
+	max-width: 87.9rem;
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.details_slide {
+}

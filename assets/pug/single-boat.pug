@@ -1,0 +1,121 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Single boat'}
+block content_block
+	+hero({
+		img: 'hero-single_1',
+		title: 'Название лодки',
+		subtitle: 'от 2 995 000 ₽',
+		price: true,
+		hero_mod: 'mb0 products_hero'
+	})
+	section.heroParams 
+		.section_in 
+			ul.heroParans_list
+				- var params = [{title: '70 л/с', val: 'Мощность'}, {title: '5,26 м.', val: 'Длина лодки'}, {title: '4 чел.', val: 'Вместимость'},]
+					each item in params 
+						li 
+							p=item.title 
+							span=item.val
+	section.allParams 
+		.section_in 
+			.allParams_main_w 
+				.allParams_title.section_title 
+					h2 Характеристики 
+				.allParams_main 
+					.allParams_img 
+						img(src="i/single/params.jpg", alt="")
+					ul.special_list
+						-
+							var list = [
+								{
+									label: 'Длина наибольшая',
+									val: '5.26 м'
+								},
+								{
+									label: 'Длина габартиная',
+									val: '5.26 м'
+								},
+								{
+									label: 'Ширина наибольшая',
+									val: '1.84 м'
+								},
+								{
+									label: 'Ширина габаритная',
+									val: '1.84 м'
+								},
+								{
+									label: 'Высота борта на миделе',
+									val: '0.75 м'
+								},
+								{
+									label: 'Минимальная высота надводного борта',
+									val: '0.44 м'
+								},
+								{
+									label: 'Водоизмещение полное',
+									val: '1275 кг'
+								},
+								{
+									label: 'Масса судна',
+									val: '486 кг'
+								},
+								{
+									label: 'Килеватость',
+									val: '12 град'
+								},
+								{
+									label: 'Максимальная мощность двигателя',
+									val: '51/70 кВт/л.с.'
+								},
+								{
+									label: 'Максимальный вес двигателя',
+									val: '120 кг'
+								},
+								{
+									label: 'Пассажировместимость',
+									val: '4 чел'
+								},
+								{
+									label: 'Грузоподъемность',
+									val: '450 кг'
+								},
+								{
+									label: 'Запас топлива',
+									val: '60 л'
+								}
+							]
+						each item in list 
+							li 
+								p=item.label 
+								span=item.val
+	+block_def({
+		class: 'about_blocks single_block_img ideal',
+		name: 'Получить консультацию',
+		title: 'Заголовок для описания лодки',
+		img: 'about',
+		clas: 'dark-btn trigger_form'
+	})
+	include interface/minilist
+	section.homeConf 
+		.section_in 
+			.homeConf_main
+				.homeConf_content 
+					.section_title 
+						h3 Создайте свою лодку с помощью конфигуратора
+					+btn({class: 'conf_btn', name: 'Открыть конфигуратор'})
+				.homeConf_img 
+					img(src="i/home/spead.png", alt="")
+	section.gallery_default 
+		.gallery_default_main 
+			.gallery_default_title.section_title 
+				h4 Фотогалерея
+			ul.gallery_default_list
+				-for(i = 0; i < 4; i++)
+					li
+						a(href=`i/single/gallery_${i}.jpg` data-fancybox)
+							img(src=`i/single/gallery_${i}.jpg`, alt="")
+	+reco({
+		title: 'Пакетные предложения'
+	})

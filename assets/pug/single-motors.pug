@@ -1,0 +1,19 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Single trailer', header_mod: 'color-dark'}
+block content_block
+	+hero_single({
+		title: 'Название мотора',
+		price: '2 995 000',
+		img: 'motors'
+	})
+	+default({
+		title: 'Описание',
+		txt: true,
+		mod: 'single_txt_section'
+	})
+	include interface/minilist
+	+reco({
+		title: 'Вам может подойти'
+	})

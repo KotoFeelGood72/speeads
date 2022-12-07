@@ -1,0 +1,280 @@
+// Button
+mixin btn(data)
+	if data.link === true
+		.btn(class=data.clas)
+			a(href="#") 
+				p=data.name
+					.btn_icon 
+						+icon('arr-right')
+	else
+		.btn(class=data.clas)
+			button(type=data.type ? data.type : 'button')
+				if data.name
+					p=data.name
+					.btn_icon 
+						+icon('arr-right')
+				else
+					p Оставить заявку
+					.btn_icon 
+						+icon('arr-right')
+// End button
+
+// Products card
+
+mixin products(item)
+	article.products_card
+		a(href="#")
+			if item.img
+				.products_img
+					img(src=`i/products/${item.img}.png`, alt="")
+			else 
+				.products_img
+					img(src="i/products/products.png", alt="")
+			.products_card_content
+				.products_card_title
+					h3 название модели
+				.products_card_desc 
+					p Краткое описание
+				.products_card_price
+					p 2 995 000
+			.products_card_link 
+				+icon('arr-right')
+
+// End products card
+
+// Global block image and text
+mixin block_def(data)
+	section(class=data.class) 
+		.section_in 
+			div(class=`${data.class}_main`)
+				.ideal_img 
+					img(src=`i/home/${data.img}.jpg`, alt="")
+				.ideal_content
+					.section_title 
+						h3!=data.title
+					.ideal_content_txt.global_txt 
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ex fuga harum illo voluptates quis beatae repellendus sequi laboriosam fugit, dolorem, temporibus incidunt porro nesciunt dicta hic nam rerum excepturi.
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod rem nulla sed ea eum itaque aliquid excepturi, nam quis totam, impedit laboriosam nihil amet ad repudiandae. Mollitia pariatur veritatis consequuntur.
+					+btn({clas: data.clas, name: `${data.name}`})
+// End
+
+
+// Shop row
+
+mixin shopRow(data)
+	section.products_row 
+		.section_in
+			.products_row_main(class=data.mod) 
+				.section_title.products_row_title 
+					if data.h2 === true 
+						h2=data.title
+					else if data.h3 === true 
+						h2=data.title
+					else if data.h4 === true 
+						h2=data.title
+					else if data.h5 === true 
+						h2=data.title
+					else if data.h6 === true 
+						h2=data.title
+				ul.products_row_grid
+					-for(i = 0; i < data.count; i++ )
+						li
+							+products({
+								img: data.img
+							})
+
+// End shop row
+
+
+// Shop hero display
+
+mixin hero(data)
+	section.shopHero
+		.shopHero_img 
+			img(src=`i/allHero/${data.img}.jpg`, alt="") 
+		.section_in 
+			.shopHero_main(class=data.hero_mod)
+				.shopHero_head 
+					.shopHero_title 
+						h1=data.title
+					if data.price === true
+						if data.subtitle
+							.shopHero_subtitle.mod_price 
+								h2=data.subtitle
+				+btn({
+					type: 'button',
+					clas: 'heroShop_btn trigger_form'
+				})
+
+// End shop hero display
+
+
+// Standart text title and description
+
+mixin default(data)
+	if data.theme === "dark"
+		section(class=data.mod class="dark") 
+			.section_in 
+				.titleDesc_main(class=`titleDesc_main_dark`) 
+					.titleDesc_title.section_title 
+						h2=data.title 
+					.titleDesc_txt.global_txt
+						if data.txt === true
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						else 
+							p=data.txt1
+							p=data.txt2
+	else 
+		section(class=data.mod) 
+			.section_in 
+				.titleDesc_main 
+					.titleDesc_title.section_title 
+						h2=data.title 
+					.titleDesc_txt.global_txt
+						if data.txt === true
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						else 
+							p=data.txt1
+							p=data.txt2
+
+//  End mixin 
+
+// Start mixin txt and slider 
+
+
+mixin txtSlider(data)
+	section.homeDetails 
+		.section_in 
+			.homeDetails_main(class=data.mod) 
+				.homeDetails_content 
+					.section_title 
+						h3=data.title
+					.ideal_content_txt.global_txt 
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ex fuga harum illo voluptates quis beatae repellendus sequi laboriosam fugit, dolorem, temporibus incidunt porro nesciunt dicta hic nam rerum excepturi.
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod rem nulla sed ea eum itaque aliquid excepturi, nam quis totam, impedit laboriosam nihil amet ad repudiandae. Mollitia pariatur veritatis consequuntur.
+					+btn({clas: `${data.clas}`, name: 'отправить запрос'})
+				.homeDetails_slider_w 
+					.details_nav.nav_slider 
+						.details_nav_btn.nav_btn.prev 
+							button(type="button")
+								+icon('left')
+						.details_nav_btn.nav_btn.next 
+							button(type="button")
+								+icon('right')
+					.details_slider.swiper(data-slider-id=data.id)
+						.swiper-wrapper
+							-for(i = 0; i < 4; i++) 
+								.swiper-slide 
+									.details_slide 
+										img(src="i/home/details.jpg", alt="")
+					.other_pug.global_pug
+
+// End mixin 
+
+
+// Start mixin navigation
+
+mixin nav(data)
+	.slider_nav(class=`${data.mod}_nav`)
+		each item in ['prev', 'next']
+			.slider_nav(class=`${data.mod}_btn--${item}` class=item) 
+				button(type="button")
+					+icon(item)
+
+// End mixin
+
+// Start mixin recomendation
+
+mixin reco(data)
+	section.reco 
+		.section_in 
+			.reco_main_w 
+				.reco_head
+					.reco_title.section_title 
+						h5=data.title
+					+nav({
+						mod: 'reco',
+					})
+				.reco_mobile_nav
+					.reco_slider_w 
+						.reco_slider.swiper 
+							.swiper-wrapper
+								-for(i = 0; i < 12; i++) 
+									.swiper-slide 
+										.reco_slide 
+											+products({
+												img: 'products_1'
+											})
+					.reco_pug.global_pug
+
+// End mixin
+
+// Start mixin hero single
+
+mixin hero_single(data)
+	section.hero_single 
+		.section_in 
+			.hero_single_main
+				.hero_single_content 
+					.hero_single_title 
+						h1=data.title
+					.hero_single_price=data.price
+					+btn({
+						name: 'Сделать заказ',
+						clas: 'dark-btn trigger_form'
+					})
+				.single_slide_w 
+					.single_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 6; i++) 
+								.swiper-slide 
+									.single_slide 
+										a(href="#")
+											img(src=`i/single/${data.img}.jpg`, alt="")
+					+nav({
+						mod: 'single',
+						mod_btn: 'single'
+					})
+					.global_pug.single_pug
+
+// End mixin
+
+
+
+// Start mixin variant item
+
+mixin form_item(data)
+	.form_item_w 
+		input(type="radio", name=`variants${data.row}` id=data.id)
+		label.form_item(for=data.id) 
+			.formItem_img_w 
+				.form_item_img 
+					img(src=`i/calc/${data.img}.jpg`, alt="")
+				.form_item_add 
+					button(type="button" data-checked="Добавить" data-unchecked="Убрать") 
+			.form_item_content 
+				h3 Название функции
+				.form_item_price 43 000
+
+
+// End mixin
+
+
+// Header mixin //
+mixin header(data)
+	header.header(class=data.mod)
+		.header_main 
+			.header_number 
+				a(href="#") +7 (000) 000 00 00
+			.header_conf 
+				a(href="#") Конфигуратор
+			.header_burger 
+				span 
+				span 
+				span 
+		
+
+
+	// End mixin 

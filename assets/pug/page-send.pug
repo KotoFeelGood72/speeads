@@ -1,0 +1,37 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Single trailer', header_mod: 'color-dark'}
+block content_block
+	section.calc 
+		.section_in 
+			.calc_main_w.calc_details_main
+				.calc_main_head 
+					.calc_head_title.section_title 
+						h1 Конфигуратор
+					ul.calc_link_step 
+						each item in ['Выберите опции', 'Оставьте заявку']
+							li 
+								a(href="#")=item
+	section.details 
+		.section_in 
+			.details_main
+				.details_content 
+					h1 Название лодки
+					ul.details_content_list 
+						li 
+							p Цвет
+							.details_color(style='background-color: red;')
+						li 
+							p Стандартная стоимость:
+							span 2 000 000
+						li 
+							p Стоимость с доп. функциями:
+							span 2 500 000
+					+btn({
+						clas: 'dark-btn btn_details trigger_form'
+					})
+				.details_img 
+					img(src="i/calc/boat.jpg", alt="")
+	include interface/minilist
+	include interface/minilist

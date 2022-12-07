@@ -1,0 +1,41 @@
+.popup_lang.popup 
+	.popup_bg.popup_bg_lang.remove_popup 
+	.popup_main.popup_main_lang 
+		.popup_close.popup_close_lang.remove_popup 
+			button 
+				+icon('close')
+		h3 Выберите язык
+		ul.popup_lang_list.custom_scroll 
+			-for(i = 0; i < 6; i++)
+				li 
+					a(href="#" class="lang_link")
+						.icon_lang 
+							img(src=`i/global/lang_${i}.jpg`, alt="")
+						p русский
+.popup_send.popup 
+	.popup_bg.popup_bg_send.remove_popup 
+	.popup_main.popup_main_send 
+		.popup_close.popup_close_send.remove_popup 
+			button 
+				+icon('close')
+		.popup_form.custom_scroll
+			h3 Оставьте заявку 
+			form(action="")
+				.popup_form_input.action_input 
+					input(type="text" placeholder="Ваше имя")
+				.popup_form_input.action_input 
+					input(type="tel" placeholder="Ваш телефон")
+				.popup_form_input.popup_textarea.action_input
+					textarea(placeholder="Ваш комментарий")
+				.popup_form_check.action_check 
+					input(type="checkbox" id="popupCheck")
+					label(for="popupCheck")!='Отправляя информацию вы даёте согласие на обработку персональных данных и соглашаетесь c <a href="#" target="_blank">политикой конфиденциальности.</a>'
+				+btn({
+					name: 'Отправить',
+					type: 'submit',
+					clas: 'dark-btn dark-button form_submit'
+				})
+
+
+
+.big_menu_bg

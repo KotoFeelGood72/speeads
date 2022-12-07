@@ -1,0 +1,54 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Page dillers'}
+block content_block
+	+hero({
+		title: 'Дилеры',
+		img: 'hero_7',
+	})
+	+default({
+		title: 'Полностью преобразим вашу лодку',
+		mod: 'dillers_txt_block',
+		txt1: 'Наши официальные дилеры с радостью помогут вам в выборе лодки и комплектации',
+		txt2: 'Хотите стать официальным дилером? — Присылайте нам на почту mail@mail.ru заполненную анкету, и мы с вами свяжемся.'
+	})
+	section.dillersMap
+		.section_in 
+			.dillers_map_main 
+				.dillers_map 
+					#map
+				.dillers_city_w 
+					.dillers_list_w 
+						ul.dillers_list 
+	section.dillersResult#result 
+		.section_in 
+			.dillersResult_main 
+				.dillers_result_title 
+					h2 Краснодар
+				ul.dillers_result_list 
+					-for(i = 0; i < 2; i++)
+						li.dillers_result_item 
+							.dillers_item_title 
+								h4 Yamaha Центр "Южная Яхтинговая компания"
+							.dillers_item_info
+								.dillers_item_address
+									ul  
+										li Тургеневское шоссе, 25/1
+										li Пн-Пт с 9:00 до 19:00, Сб с 9:00 до 15:00, Вс - выходной
+								.dillers_item_phone 
+									ul
+										li 
+											a(href="#") 8 (861) 215-97-91
+										li 
+											a(href="#") 8 (861) 215-97-91
+								.dillers_item_email
+									ul
+										li 
+											a(href="#") a.sakhnov@yamaha-krd.ru
+										li 
+											a(href="#") krasnodar.boats.ru
+	include interface/action
+									
+			
+				

@@ -1,0 +1,25 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Single trailer', header_mod: 'color-dark'}
+block content_block
+	+hero_single({
+		title: 'Название прицепа',
+		price: '2 995 000',
+		img: 'trailer'
+	})
+	+default({
+		title: 'Описание',
+		txt: true,
+		mod: 'single_txt_section'
+	})
+	//- section.complect.small_params 
+	//- 	.section_in 
+	//- 		.complect_main 
+	//- 			.complect_title.section_title 
+	//- 				h3 Характеристики
+	include interface/minilist
+	+reco({
+		title: 'Вам может подойти',
+		img: 'trailer',
+	})

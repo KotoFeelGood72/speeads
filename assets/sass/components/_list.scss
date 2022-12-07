@@ -1,0 +1,55 @@
+.complect {
+}
+.small_params {
+}
+.section_in {
+}
+.complect_main {
+}
+.complect_title {
+}
+.section_title {
+}
+.special {
+}
+.special_list_main {
+}
+.special_list {
+	margin-bottom: 13rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+
+
+	li {
+		@include flex-space;
+		font-size: 2rem;
+		font-family: $font_2;
+		border-bottom: .1rem solid $gray1;
+		padding-bottom: 1.5rem;
+		@include bp($point_2) {
+			font-size: 1.4rem;
+			padding-bottom: 1rem;
+			font-family: $font_1;
+			font-weight: 400;
+			align-items: flex-start;
+		}
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+			@include bp($point_2) {
+				margin-bottom: 2rem;
+			}
+		}
+		p {
+			@include bp($point_2) {
+				font-family: $font_2;
+			}
+		}
+		p, span {
+			flex: 50%;
+		}
+		span {
+			text-align: right;
+		}
+	}
+}

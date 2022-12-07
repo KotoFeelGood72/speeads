@@ -1,0 +1,172 @@
+.hero_single {
+}
+.section_in {
+}
+.hero_single_main {
+	@include flex-start;
+	align-items: flex-start;
+	padding-top: 14rem;
+	@include bp($point_2) {
+		padding-top: 10rem;
+		flex-direction: column;
+		max-width: 100%;
+	}
+}
+.hero_single_content {
+	max-width: 57.2rem;
+	width: 100%;
+	margin-right: 24.4rem;
+	@include bp($point_2) {
+		margin: 0 0 5rem 0;
+		order: 1;
+	}
+}
+.hero_single_title {
+	margin-bottom: 3rem;
+	@include bp($point_2) {
+		margin-bottom: 1rem;
+	}
+	h1 {
+		@include bp($point_2) {
+			font-size: 3rem;
+			line-height: 4.6rem;
+		}
+	}
+}
+.hero_single_price {
+	font-size: 4rem;
+	font-family: $font_3;
+	color: $red;
+	margin-bottom: 6rem;
+
+	@include bp($point_2) {
+		font-size: 2.4rem;
+		margin-bottom: 4rem;
+	}
+	&:after {
+		content: ' ₽';
+	}
+}
+.btn {
+}
+.btn_icon {
+}
+.icon {
+}
+.icon-arr-right {
+}
+.single_slide_w {
+	position: relative;
+	@include bp($point_2) {
+		max-width: 100%;
+		margin-bottom: 8rem;
+	}
+}
+.single_slider {
+	max-width: 79.1rem;
+	@include bp($point_2) {
+		max-width: 100%;
+		width: 100%;
+		// order: 0;
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.single_slide {
+}
+.slider_nav {
+}
+.undefined {
+}
+
+.nav {
+}
+.single_nav {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 73.1rem;
+	z-index: 3;
+	@include flex-space;
+	.swiper-button-disabled {
+		button {
+			color: #DBDBDB;
+			pointer-events: none;
+		}
+	}
+	button {
+		width: 2rem;
+		height: 3.5rem;
+		color: $red;
+		svg {
+			width: 100%;
+			height: 100%;
+			@include flex-center;
+		}
+	}
+}
+
+.prev {
+}
+.icon-item {
+}
+.next {
+}
+.titleDesc_main {
+}
+.titleDesc_title {
+}
+.section_title {
+}
+.titleDesc_txt {
+}
+.global_txt {
+}
+.complect {
+}
+.small_params {
+}
+.complect_main {
+}
+.complect_title {
+}
+.special {
+}
+.special_list_main {
+}
+.special_list {
+}
+.reco {
+}
+.reco_main_w {
+}
+.reco_head {
+}
+.reco_title {
+}
+.reco_slider_w {
+}
+.reco_slider {
+}
+.reco_slide {
+}
+.products_card {
+}
+.products_img {
+}
+.products_card_content {
+}
+.products_card_title {
+}
+.products_card_desc {
+}
+.products_card_price {
+}
+.products_card_link {
+}

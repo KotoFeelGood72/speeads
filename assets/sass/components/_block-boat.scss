@@ -1,0 +1,67 @@
+.homeConf {
+	background-color: $dark;
+	h3 {
+		color: $white
+	}
+	.section_title {
+		&:before {
+			border-color: $white
+		}
+		margin-bottom: 9rem;
+		@include bp($point_2) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	.section_in {
+		max-width: 100%
+	}
+}
+.section_in {
+}
+.homeConf_main {
+	@include flex-start;
+	align-items: flex-start;
+	padding: 9.6rem 0 1.7rem 6.8rem;
+	margin-bottom: 16rem;
+	@include bp($point_2) {
+		padding: 6rem 0;
+		flex-direction: column;
+		align-items: center;
+		text-align: center!important;
+		margin-bottom: 10rem;
+	}
+
+	.section_title {
+		&:before {
+			@include bp($point_2) {
+				display: none;
+			}
+		}
+	}
+}
+.homeConf_content {
+	@include bp($point_2) {
+		order: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+.section_title {
+}
+.btn {
+}
+.btn_icon {
+}
+.icon {
+}
+.icon-arr-right {
+}
+.homeConf_img {
+	width: 100%;
+	max-width: 97.8rem;
+	@include bp($point_2) {
+		order: 0;
+	}
+}

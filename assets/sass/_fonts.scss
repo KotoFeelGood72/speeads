@@ -1,0 +1,9 @@
+@include font_face('OpenSans-Regular', 'OpenSans-Regular', $font_path, 400);
+//
+@include font_face('OpenSans-SemiBold', 'OpenSans-SemiBold', $font_path, 600);
+//
+@include font_face('OpenSans-Bold', 'OpenSans-Bold', $font_path, 700);
+//
+@include font_face('Oswald-Medium', 'Oswald-Medium', $font_path, 700);
+//
+@include font_face('Oswald-SemiBold', 'Oswald-SemiBold', $font_path, 800);

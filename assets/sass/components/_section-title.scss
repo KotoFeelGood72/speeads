@@ -1,0 +1,76 @@
+.section_title {
+	position: relative;
+	display: inline-flex;
+	margin: 0 0 6rem 0;
+	max-width: 71.3rem;
+	@include bp($point_2) {
+		margin: 0 0 4rem 0;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-size: 6rem;
+		padding-bottom: 3rem;
+		line-height: 6rem;
+		font-family: $font_3;
+		@include bp($point_2) {
+			font-size: 4rem;
+			line-height: 5rem;
+			padding-bottom: 2rem;
+		}
+	}
+	&:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 12.5rem;
+		content: '';
+		border-bottom: .5rem solid $red;
+	}
+}
+
+.global_txt {
+	margin-bottom: 6rem;
+	@include bp($point_2) {
+		font-size: 1.6rem;
+		margin-bottom: 4rem;
+	}
+	h2, h3, h4, h5, h6, p, ul, ol, span {
+		font-weight: 400;
+		line-height: 2.7rem;
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	h2, h3, h4, h5, h6 {
+		font-size: 2.2rem;
+		font-family: $font_22;
+		text-transform: uppercase;
+	}
+
+	li {
+		font-weight: 400;
+		line-height: 2.7rem;
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.about_txt_block  {
+	.global_txt {
+		margin-bottom: 0;
+	}
+}
+
+.gallery_default_title {
+	margin-left: 6.7rem;
+	@include bp($point_2) {
+		margin-left: 0;
+	}
+}
+
+.gallery_default_main {
+	@include bp($point_2) {
+		padding: 0 2rem;
+	}
+}

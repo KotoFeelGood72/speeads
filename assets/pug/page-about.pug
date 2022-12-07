@@ -1,0 +1,42 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Page about'}
+block content_block
+	+hero({
+		title: 'О нас',
+		img: 'hero_8',
+		hero_mod: 'no_mb'
+	})
+	+block_def({
+		class: 'about_blocks company_main ideal',
+		name: 'Получить консультацию',
+		title: 'Заголовок для описания лодки',
+		img: 'about',
+		clas: 'dark-btn trigger_form',
+	})
+	section.serviceDef
+		.section_in 
+			.serviceDef_main 
+				ul.serviceDef_list 
+					-for(i = 1; i < 4; i++)
+						li.serviceDef_item 
+							h3!=`Преимущество ${i}`
+							.serviceDef_item_txt.global_txt 
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	+default({
+		title: 'Сила инноваций',
+		mod: 'about_txt_block',
+		theme: 'dark',
+		txt: true
+	})
+	section.dtur 
+		img(src="i/3dtur.jpg", alt="")
+	+txtSlider({
+		title: 'Наше производство',
+		id: '2',
+		clas: 'dark-btn trigger_form',
+	})
+	include interface/part
+	.mod_forms
+		include interface/action

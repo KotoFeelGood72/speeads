@@ -1,0 +1,38 @@
+footer.footer 
+	.section_in
+		.footer_main
+			.footer_main_top 
+				ul.footer_info_list 
+					-
+						var info = [
+							{
+								link: '+7 (000) 000 00 00'
+							},
+							{
+								link: 'mail@mail.ru'
+							},
+							{
+								txt: 'г.Краснодар, ул.Солнечная 25 д1'
+							},
+						]
+					each item in info 
+						if item.link 
+							li 
+								a(href="#")=item.link 
+						else 
+							li 
+								a(href="#")=item.txt  
+				ul.footer_social 
+					each item in ['tg', 'wa']
+						li 
+							a(href="#")
+								+icon(item) 		
+			.footer_main_bottom 
+				.footer_copyright ©  Все права защищены, 2022
+				.footer_policy 
+					a(href="#") Политика конфиденциальности
+				.arkada_brand 
+					a(href="#")
+						p Разработано arkada-web.ru
+						.arkada_logo 
+							img(src="i/global/favicon.png", alt="")

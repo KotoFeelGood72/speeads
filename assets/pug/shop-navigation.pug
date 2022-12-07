@@ -1,0 +1,21 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Shop navigation'}
+block content_block
+	+hero({
+		title: 'Каталог навигации',
+		img: 'hero_5',
+	})
+	+shopRow({
+		title: `Бренд 1`,
+		mod: 'nav_products_main',
+		h2: true,
+		count: 3
+	})
+	+shopRow({
+		title: `Бренд 2`,
+		mod: 'nav_products_main',
+		h3: true,
+		count: 3
+	})

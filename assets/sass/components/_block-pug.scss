@@ -1,0 +1,67 @@
+.pag_block {
+}
+.pag_list {
+	@include flex-center;
+	position: relative;
+	margin-bottom: 13rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.pag_item {
+	width: 5.4rem;
+	height: 5.4rem;
+	@include flex-center;
+	@include bp($point_2) {
+		width: 4rem;
+		height: 4rem;
+	}
+	a {
+		width: 100%;
+		height: 100%;
+		@include flex-center;
+		font-size: 2.2rem;
+		font-family: $font_2;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
+		&:hover {
+			color: $red;
+		}
+		&.active_mod {
+			background-color: $dark;
+			color: $white;
+		}
+	}
+}
+.prev_mod {
+}
+.prev_mod {
+	color: #A3A3A3;
+	svg {
+		width: .8rem;
+		height: 1.4rem;
+		@include flex-center;
+	}
+}
+.icon {
+}
+.icon-prev {
+}
+.active_mod {
+}
+.dots_mod {
+}
+.next_mod {
+	color: #A3A3A3;
+	svg {
+		width: .8rem;
+		height: 1.4rem;
+		@include flex-center;
+	}
+}
+
+
+.global_pug {
+	
+}

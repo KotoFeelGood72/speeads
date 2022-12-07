@@ -1,0 +1,43 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Blog page'}
+block content_block
+	+hero({
+		title: 'Блог',
+		img: 'hero_9',
+	})
+	section.blog 
+		.section_in 
+			.blog_main_w 
+				.blog_head 
+					ul.blog_type_list 
+						each item in ['Все', 'Новости', 'Статьи']
+							li 
+								a(href="#")=item 
+				.blog_main 
+					ul.blog_list
+						-for(i = 0; i < 6; i++) 
+							li.blog_item_w 
+								article.blog_item
+									.blog_item_img 
+										a(href="#")
+											img(src="i/3dtur.jpg", alt="")
+									.blog_item_content
+										.blog_content_main 
+											.blog_item_title
+												a(href="#") 
+													h3 Название Статьи
+											.blog_item_txt 
+												p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+											.blog_item_date 21.10.2022
+										+btn({
+											name: 'Читать',
+											link: true,
+											clas: 'dark-btn blog-btn'
+										})
+									.blog_type_label Статьи
+					+pagination({
+						pages: 5,
+						arrows:true
+					})

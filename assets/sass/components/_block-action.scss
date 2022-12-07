@@ -1,0 +1,66 @@
+.action {
+	.section_in {
+		max-width: 100%;
+	}
+}
+.section_in {
+}
+.action_main {
+	@include flex-start;
+	align-items: flex-start;
+	padding-left: 6.8rem;
+	@include bp($point_2) {
+		flex-direction: column;
+		padding-left: 0;
+	}
+}
+.action_form_w {
+	max-width: 63.1rem;
+	margin-right: 17.3rem;
+	padding-top: 7rem;
+	@include bp($point_2) {
+		margin: 0 0 10rem 0;
+	}
+}
+.action_form_head {
+	margin-bottom: 3rem;
+	.section_title {
+		margin-bottom: 3rem;
+	}
+}
+.section_title {
+}
+.action_txt {
+}
+.action_form {
+	max-width: 63.1rem;
+	width: 100%;
+}
+.action_input {
+	margin-bottom: 2rem;
+	width: 100%;
+	input, textarea {
+		@include input;
+	}
+	textarea {
+		height: 11rem;
+	}
+}
+.action_check {
+	@include check;
+	margin-bottom: 4rem;
+}
+
+.action_img {
+	@include bp($point_2) {
+		display: none;
+	}
+}
+.btn {
+}
+.btn_icon {
+}
+.icon {
+}
+.icon-arr-right {
+}

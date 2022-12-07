@@ -1,0 +1,27 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Shop boat'}
+block content_block
+	+hero({
+		title: 'Каталог катеров',
+		img: 'hero_1',
+	})
+	+shopRow({
+		title: `Модельный ряд 1`,
+		mod: 'home_products_main',
+		h2: true,
+		count: 3
+	})
+	+shopRow({
+		title: `Модельный ряд 2`,
+		mod: 'home_products_main',
+		h2: true,
+		count: 4
+	})
+	+shopRow({
+		title: `Модельный ряд 3`,
+		mod: 'home_products_main',
+		h2: true,
+		count: 6
+	})

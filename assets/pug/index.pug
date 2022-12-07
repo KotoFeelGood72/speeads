@@ -1,0 +1,50 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'HOME'}
+block content_block
+	+hero({
+		img: 'hero',
+		title: 'Производство моторных лодок',
+		clas: 'trigger_form'
+	})
+	+shopRow({
+		title: 'Модельный ряд',
+		mod: 'home_products_main',
+		h2: true,
+		count: 3
+	})
+	+block_def({
+		class: 'ideal',
+		name: 'получить консультацию',
+		title: 'Откройте для себя идеальную лодку',
+		img: 'ideal',
+		clas: 'dark-btn trigger_form',
+	})
+	+txtSlider({
+		title: 'Важна каждая деталь',
+		clas: 'dark-btn trigger_form',
+		id: 'slider-1'
+	})
+	section.block_img 
+		img(src="i/home/big_img.jpg", alt="")
+	section.homeConf 
+		.section_in 
+			.homeConf_main
+				.homeConf_content 
+					.section_title 
+						h3 Создайте свою лодку с помощью конфигуратора
+					+btn({class: 'conf_btn', name: 'Открыть конфигуратор'})
+				.homeConf_img 
+					img(src="i/home/spead.png", alt="")
+	+block_def({
+		class: 'packages',
+		name: 'узнать больше',
+		title: 'Пакетные предложения - лодка с мотором',
+		img: 'package',
+		clas: 'dark-btn trigger_form',
+	})
+	include interface/part
+	section.block_img 
+		img(src="i/home/big_img1.jpg", alt="")
+	include interface/action

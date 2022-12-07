@@ -1,0 +1,95 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Single trailer', header_mod: 'color-dark'}
+block content_block
+	section.calc 
+		.section_in 
+			.calc_main_w 
+				.calc_main_head 
+					.calc_head_title.section_title 
+						h1 Конфигуратор
+					ul.calc_link_step 
+						each item, i in ['Выберите опции', 'Оставьте заявку']
+							if i === 0
+								li.active 
+									a(href="#")=item
+							else 
+								li
+									a(href="#")=item
+				.calc_main
+					.calc_form_w
+						form.calc_form(action="#")
+							.calc_form_row
+								.form_item_title 
+									h2 Пакеты
+								ul.calc_form_var
+									-for(i = 0; i < 2; i++) 
+										li 
+											+form_item({
+												img: 'form_1',
+												id: `formItem_${i}`,
+												row: '1'
+											})
+							.calc_form_row
+								.form_item_title 
+									h2 Экстерьер 
+								ul.calc_form_var
+									-for(i = 3; i < 5; i++) 
+										li 
+											+form_item({
+												img: 'form_2',
+												id: `formItem_${i}`
+											})
+							.calc_form_row
+								.form_item_title 
+									h2 Салон 
+								ul.calc_form_var
+									-for(i = 6; i < 8; i++) 
+										li 
+											+form_item({
+												img: 'form_2',
+												id: `formItem_${i}`,
+												row: '2'
+											})
+							.calc_form_row
+								.form_item_title 
+									h2 Управление и двигатель 
+								ul.calc_form_var
+									-for(i = 9; i < 11; i++) 
+										li 
+											+form_item({
+												img: 'form_2',
+												id: `formItem_${i}`,
+												row: '3'
+											})
+					.calc_total 
+						.calc_total_img 
+							img(src="i/calc/boat.jpg", alt="")
+						.calc_boat_name 
+							h3 Название лодки
+						.calc_params 
+							.calc_params_name Цвет бортов:
+							.calc_params_color 
+								ul
+									-for(i = 0; i < 4; i++)
+										- var color = ['red', 'green', 'blue', 'violet']
+										li 
+											input(type="radio" name="color_variant" id=`color_${color[i]}`)
+											label(for=`color_${color[i]}` style="background-color:" +  `${color[i]}`)
+							.calc_params_option
+								.calc_params_name Дополнительные опции:
+								ul.calc_option_list 
+									each item in ['Центральный рундук - 43 000 ₽', 'Кормовая лестница - 43 000 ₽', 'Специальная графика V-Kinetics - 43 000 ₽', 'Оклейка борта, пленка под карбон - 43 000 ₽']
+										li
+											p=item
+											button(type="button" class="remove_item")
+												+icon('close')
+							.calc_summa 
+								.calc_params_name Итоговая сумма:
+								.calc_summa_price 2 995 000
+								+btn({
+									clas: 'dark-btn calc_next_link',
+									name: 'Посмотреть конфигурацию',
+									link: true,
+								})

@@ -1,0 +1,40 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Single trailer', header_mod: 'color-dark'}
+block content_block
+	section.contacts 
+		.section_in 
+			.contacts_main_w 
+				.contacts_title 
+					h1 Контакты
+				.contacts_main 
+					.contacts_content 
+						ul.contacts_info_list 
+							li 
+								h3 Для связи
+								ul 
+									li 
+										p Телефон:
+										a(href="#") +7 000 000 00 00
+									li 
+										p Почта
+										a(href="#") mail@mail.ru 
+							li 
+								h3 Адрес
+								ul 
+									li 
+										p Телефон:
+										a(href="#") +7 000 000 00 00
+									li 
+										p Почта
+										a(href="#") mail@mail.ru
+							li 
+								h3 Мессенджеры
+								ul.messenger_list 
+									each item in ['tg', 'wa']
+										li 
+											a(href="#")
+												+icon(item) 
+					.contacts_map 
+						#maps_contacts

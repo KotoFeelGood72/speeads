@@ -1,0 +1,33 @@
+.sidebar 
+	.sidebar_main
+		.sidebar_main_list 
+			.sidebar_logo 
+				a(href="#")
+					img(src="i/global/logo.png", alt="")
+			nav.sidebar_nav 
+				ul
+					-for(i = 0; i < 11; i++)
+						- var navSubmenuOpen = [true, true, false, false, false, false, false, false, false, false, false]
+						- var navLink = ['Катера', 'Аэролодки', 'Моторы', 'Пакеты', 'Прицепы', 'Навигация', 'Тюнинг', 'Дилеры', 'О нас', 'Блог', 'Контакты']
+								if navSubmenuOpen[i]
+									li.nav_item.open_menu
+										.nav_item_link
+											a(href="#") 
+												p(class="trigger_submenu")=navLink[i]
+												.nav_item_icon 
+													+icon(`nav_${i}`)
+										include submenu
+								else
+									li.nav_item
+										.nav_item_link
+											a(href="#") 
+												p=navLink[i]
+												.nav_item_icon 
+													+icon(`nav_${i}`)
+			.sidebar_lang 
+				button(type="button")
+					.sidebar_lang_country 
+						img(src="i/global/country_1.jpg", alt="")
+					p.current_lang Rus
+					.sidebar_lang_arr 
+						+icon('arr-right')

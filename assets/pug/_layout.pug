@@ -1,0 +1,27 @@
+include templates/_global_vars
+include templates/_global_mixins
+include templates/_project_mixins
+
+
+- array = '';
+block vars
+doctype
+html(lang="en")
+	head
+		+head(array)
+	body(class= array.body_class)
+		+header({
+			mod: array.header_mod
+		})
+		main.layout_main
+			.sidebar_w(class="animate_body") 
+				include interface/sidebar
+			.wrapper(class= array.layout_mod class="animate_body")
+				.base(class= array.layout_mod)
+					block content_block
+				include interface/footer
+		+scripts
+		block local_popup
+			include interface/popup
+			include interface/succes
+			include interface/close

@@ -1,0 +1,200 @@
+.shopHero {
+}
+.shopHero_img {
+}
+.section_in {
+}
+.shopHero_main {
+}
+.shopHero_head {
+}
+.shopHero_title {
+}
+.shopHero_subtitle {
+}
+.mod_price {
+}
+.btn {
+}
+.btn_icon {
+}
+.icon {
+}
+.icon-arr-right {
+}
+.heroParams {
+	.section_in {
+		margin-left: 0;
+	}
+}
+.heroParans_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+	max-width: 74.4rem;
+	position: relative;
+	border-bottom: .1rem solid $dark;
+	margin-bottom: 10rem;
+	@include bp($point_2) {
+		border: none;
+		grid-gap: 1rem;
+	}
+	li {
+		border-right: .1rem solid $dark;
+		padding: 2.3rem 6.3rem;
+		@include bp($point_2) {
+			padding: 2rem;
+			border: .1rem solid $gray1;
+		}
+		p {
+			font-size: 4rem;
+			font-family: $font_3;
+			margin-bottom: 1.5rem;
+		}
+		span {
+			font-size: 1.8rem;
+		}
+	}
+}
+.allParams {
+}
+.allParams_main_w {
+}
+.allParams_title {
+}
+.allParams_main {
+	@include flex-start;
+	align-items: flex-start;
+	margin-bottom: 16rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+		flex-direction: column;
+	}
+
+	.special_list {
+		width: 100%;
+		margin-bottom: 0;
+	}
+}
+.allParams_img {
+	max-width: 68rem;
+	width: 100%;
+	height: 100%;
+	margin-right: 10rem;
+	position: sticky;
+	top: 5rem;
+	left: 0;
+	@include bp($point_2) {
+		position: static;
+		margin: 0 0 6rem 0;
+	}
+	img {
+		object-fit: cover;
+	}
+}
+.special {
+}
+.special_list_main {
+}
+.special_list_main {
+	width: 100%;
+}
+
+.single_block_img {
+	margin-bottom: 16rem;
+	@include bp($point_2) {
+		margin-bottom: 0;
+	}
+	.ideal_content {
+		padding-top: 0!important;
+	}
+}
+.ideal_img {
+}
+.ideal_content {
+}
+.section_title {
+}
+.ideal_content_txt {
+}
+.global_txt {
+}
+.complect {
+}
+.complect_main {
+}
+.complect_title {
+}
+.homeConf {
+}
+.homeConf_main {
+}
+.homeConf_content {
+}
+.homeConf_img {
+}
+.gallery_default {
+}
+.gallery_default_main {
+}
+.gallery_default_title {
+}
+.gallery_default_list {
+	@include flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-bottom: 13rem;
+
+
+	li {
+		height: 54.4rem;
+		@include bp($point_2) {
+			max-height: 30rem;
+			width: 100%;
+		}
+		a {
+			@include flex-center;
+			width: 100%;
+			height: 100%;
+			img {
+				object-fit: cover;
+			}
+		}
+		&:nth-child(1) {
+			max-width: 110rem;
+			margin: 0 2.5rem 2.5rem 0;
+			@include bp($point_2) {
+				margin: 0;
+			}
+		}
+		&:nth-child(2) {
+			max-width: 56rem;
+			margin-bottom: 2.5rem;
+			@include bp($point_2) {
+				margin: 0;
+			}
+		}
+		&:nth-child(3) {
+			max-width: 56rem;
+			@include bp($point_2) {
+				max-width: 100%;
+			}
+		}
+		&:nth-child(2) {
+			max-width: 110.1rem;
+		}
+		&:nth-child(3n) {
+			margin-right: 2.5rem;
+			@include bp($point_2) {
+				margin: 0;
+			}
+		}
+		
+
+		&:not(:last-child) {
+			@include bp($point_2) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}

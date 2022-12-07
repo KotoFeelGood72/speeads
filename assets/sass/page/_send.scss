@@ -1,0 +1,115 @@
+.calc_details_main {
+	padding-bottom: 6.4rem;
+	@include bp($point_2) {
+		padding-bottom: 3rem;
+	}
+}
+
+
+.details {
+	border-top: .1rem solid $gray1;
+	border-bottom: .1rem solid $gray1;
+	margin-bottom: 10rem;
+	@include bp($point_2) {
+		margin-bottom: 5rem;
+	}
+}
+.details_main {
+	@include flex-start;
+	align-items: flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+}
+.details_content {
+	flex: 50%;
+	padding: 2.5rem 0 10.4rem 0;
+	border-right: .1rem solid $gray1;
+	@include bp($point_2) {
+		border: none;
+		order: 2;
+		padding: 0 0 3rem 0;
+	}
+
+	h1 {
+		font-size: 6rem;
+		margin-bottom: 4.2rem;
+		@include bp($point_2) {
+			font-size: 4rem;
+			line-height: 5.6rem;
+		}
+	}
+}
+.details_content_list {
+	margin-bottom: 6rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+	}
+	li {
+		@include flex-start;
+		font-size: 2.2rem;
+		font-family: $font_2;
+		@include bp($point_2)  {
+			font-size: 1.6rem;
+		}
+		p {
+			margin-right: 1.5rem;
+			@include bp($point_2) {
+				margin-right: 1rem;
+			}
+		}
+		span {
+			color: $red;
+			font-family: $font_22;
+			position: relative;
+			&:after {
+				content: ' ₽';
+				font-family: $font_22;
+				font-weight: 700;
+			}
+		}
+		&:first-child {
+			p {
+				margin-right: 3rem;
+				@include bp($point_2) {
+					margin-right: 2rem;
+				}
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+			@include bp($point_2) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}
+.details_color {
+	width: 7.6rem;
+	height: 4.7rem;
+	@include bp($point_2) {
+		width: 5rem;
+		height: 2.5rem;
+	}
+}
+.details_img {
+	flex: 50%;
+	@include flex-end;
+	img  {
+		max-width: 67.7rem;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.special {
+}
+.special_list {
+}
+
+.btn_details {
+	button {
+		background-color: $dark;
+		color: $white;
+	}
+}

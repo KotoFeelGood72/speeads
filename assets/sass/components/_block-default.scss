@@ -1,0 +1,81 @@
+.block_default {
+}
+.section_in {
+}
+.block_default_main {
+	@include flex-start;
+	align-items: flex-end;
+	margin-bottom: 16rem;
+	@include bp($point_2) {
+		flex-direction: column;
+		margin-bottom: 10rem;
+	}
+}
+.block_default_content {
+	max-width: 73.1rem;
+	margin-right: 7.4rem;
+	@include bp($point_2) {
+		margin: 0 0 5rem 0;
+	}
+}
+.block_default_title {
+}
+.block_default_txt {
+	margin-bottom: 0;
+}
+.block_default_img {
+	width: 100%;
+	height: 100%;
+	max-width: 80.2rem;
+}
+
+.titleDesc_main  {
+	padding: 8.1rem 0 14rem 0;
+	@include bp($point_2) {
+		padding: 8rem 0;
+	}
+}
+.titleDesc_main_dark {
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.dtur {
+	max-height: 72.9rem;
+	height: 100%;
+	margin-bottom: 21.4rem;
+	@include bp($point_2) {
+		display: none;
+	}
+	img {
+		object-fit: cover;
+		height: auto;
+	}
+}
+
+.tuning_txt_block  {
+	.titleDesc_txt {
+		margin-bottom: 0;
+	}
+	.titleDesc_main {
+		padding: 0 0 10rem 0;
+	}
+}
+
+.single_txt_section {
+	.titleDesc_txt {
+		margin-bottom: 0;
+	}
+	.titleDesc_main {
+		padding: 0 0 13rem 0;
+		@include bp($point_2) {
+			padding: 0 0 10rem 0;
+		}
+	}
+}
+
+.company_main  {
+	.ideal_content {
+		padding-top: 7rem;
+	}
+}

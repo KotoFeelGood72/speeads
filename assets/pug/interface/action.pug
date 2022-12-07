@@ -1,0 +1,21 @@
+section.action 
+	.section_in 
+		.action_main 
+			.action_form_w 
+				.action_form_head 
+					.section_title 
+						h5 Оставьте заявку
+					.action_txt Мы свяжемся с вами и ответим на все вопросы!
+				.action_form 
+					.action_input 
+						input(type="text" placeholder="Ваше имя")
+					.action_input 
+						input(type="tel" placeholder="Ваш телефон")
+					.action_input 
+						textarea(placeholder="Ваш комментарий (необязательно)")
+					.action_check 
+						input(type="checkbox" id="actionCheck" name="actionCheck")
+						label(for="actionCheck")!='Отправляя информацию, вы даёте согласие на обработку персональных данных и соглашаетесь c <a target="_blank" href="#">политикой конфиденциальности.</a>'
+					+btn({clas: ['action_btn', 'dark-btn', 'dark-button'], name: 'Отправить', type: 'submit'})
+			.action_img 
+				img(src="i/global/action.jpg", alt="")

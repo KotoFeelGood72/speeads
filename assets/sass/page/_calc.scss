@@ -1,0 +1,388 @@
+.calc {
+}
+.section_in {
+}
+.calc_main_w {
+	padding: 14rem 0 13rem 0;
+	@include bp($point_2) {
+		padding: 10rem 0;
+	}
+}
+.calc_main_head {
+	h1 {
+		font-size: 6rem;
+		@include bp($point_2) {
+			font-size: 4rem;
+			line-height: 5.6rem;
+		}
+	}
+}
+.calc_head_title {
+}
+.calc_link_step {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(24.7rem, 1fr));
+
+	li {
+		background-color: #E4E4E4;
+		&:not(.active) {
+			@include bp($point_2) {
+				display: none;
+			}
+		}
+		a {
+			font-size: 1.6rem;
+			@include flex-center;
+			padding: 1.9rem 5.5rem;
+			font-family: $font_2;
+			color: $dark;
+		}
+		&.active {
+			background-color: $dark;
+			a {
+				color: $white;
+			}
+		}
+	}
+}
+.calc_main {
+	@include flex-start;
+	align-items: flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+}
+.calc_form_w {
+	width: 100%;
+	max-width: 97rem;
+	margin-right: 11.8rem;
+	padding-top: 10rem;
+	@include bp($point_2) {
+		margin-right: 0;
+		padding-top: 5rem;
+	}
+}
+.calc_form {
+}
+.calc_form_row {
+	margin-bottom: 8rem;
+	@include bp($point_2) {
+		margin-bottom: 6rem;
+	}
+}
+.form_item_title {
+
+	h2 {
+		font-size: 4rem;
+		font-family: $font_3;
+		@include bp($point_2) {
+			font-size: 3.6rem;
+		}
+	}
+	margin-bottom: 4rem;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+}
+.calc_form_var {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(45rem, 1fr));
+	grid-gap: 5rem;
+	width: 100%;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+		grid-gap: 2rem;
+	}
+
+	li {
+		@include bp($point_2) {
+			border: .1rem solid $gray1;
+		}
+	}
+}
+.form_item_w {
+	input {
+		display: none;
+		&:checked + label {
+			.form_item_add {
+				opacity: 1;
+				visibility: visible;
+			}
+			.formItem_img_w {
+				&:before {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			button {
+				background-color: $dark;
+				border-color: rgba(255, 255, 255, 0.39);
+					&:before {
+						content: attr(data-unchecked);
+					}
+				}
+		}
+	}
+	label {
+		cursor: pointer;
+		&:hover {
+			.form_item_add {
+				opacity: 1;
+				visibility: visible;
+			}
+			.formItem_img_w {
+				&:before {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+.form_item {
+}
+.formItem_img_w {
+	height: 28.9rem;
+	width: 100%;
+	position: relative;
+	margin-bottom: 2rem;
+	@include bp($point_2) {
+		margin-bottom: 0;
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: rgba(82, 82, 82, 0.5);
+		pointer-events: none;
+		transition: all .3s ease;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.form_item_img {
+	width: 100%;
+	height: 100%;
+	img {
+		@include bp($point_2) {
+			object-fit: cover;
+		}
+	}
+}
+
+.form_item_add {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s ease;
+	pointer-events: none;
+	button {
+		background-color: $red;
+		color: $white;
+		padding: 1.9rem 3rem;
+		border: .1rem solid transparent;
+		&:before {
+			content: attr(data-checked);
+		}
+	}
+}
+.form_item_add {
+}
+.form_item_content {
+	@include bp($point_2) {
+		padding: 2rem;
+	}
+
+	h3 {
+		font-size: 2.2rem;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+	}
+}
+.form_item_price {
+	color: $red;
+	font-size: 2.2rem;
+	font-family: $font_22;
+	&:after {
+		content: ' ₽';
+		font-family: $font_22;
+		font-weight: 700;
+	}
+}
+.calc_total {
+	position: sticky;
+	top: 0rem;
+	right: 0;
+	@include bp($point_2) {
+		position: static;
+		width: 100%;
+	}
+}
+.calc_total_img {
+	width: 100%;
+	height: 32.6rem;
+	margin-bottom: 1rem;
+	margin-top: -5rem;
+	@include bp($point_2) {
+		margin-top: 0;
+		height: 25rem;
+	}
+}
+.calc_boat_name {
+	h3 {
+		font-size: 4rem;
+		font-family: $font_3;
+		@include bp($point_2) {
+			font-size: 3rem;
+		}
+	}
+	margin-bottom: 4.1rem;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+}
+.calc_params {
+	border-top: .1rem  solid $gray1;
+	padding-top: 1.5rem;
+}
+.calc_params_name {
+	margin-bottom: 4.1rem;
+	font-size: 2.2rem;
+	font-family: $font_2;
+	@include bp($point_2) {
+		font-size: 1.8rem;
+		margin-bottom: 2rem;
+	}
+}
+.calc_params_color {
+	margin-bottom: 6.5rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+	}
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(7.6rem, 1fr));
+		grid-gap: .5rem;
+		max-width: 48.1rem;
+		li {
+			width: 100%;
+			height: 4.7rem;
+			&:not(:last-child) {
+				margin-right: 0.5rem;
+			}
+			& input {
+				display: none;
+				&:checked + label:after {
+					transform: scale(1) translate(-50%, -50%);;
+					opacity: 1;
+					visibility: visible
+				}
+			}
+			label {
+				@include flex-center;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+				position: relative;
+				&:after {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					content: '';
+					width: 2.3rem;
+					height: 2.3rem;
+					background-image: url('../../i/global/check.svg');
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center center;
+					opacity: 0;
+					visibility: hidden;
+					transition: all .3s ease;
+				}
+			}
+		}
+	}
+}
+.calc_params_option {
+	border-top: .1rem  solid $gray1;
+	padding-top: 1.5rem;
+	margin-bottom: 4rem;
+}
+.calc_option_list {
+	@include flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	li {
+		font-size: 1.8rem;
+		position: relative;
+		display: inline-flex;
+		@include bp($point_2) {
+			font-size: 1.4rem;
+		}
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.remove_item {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1.4rem;
+	height: 1.4rem;
+	@include flex-center;
+	color: $red;
+	right: -2.9rem;
+	cursor: pointer;
+	transition: all .3s ease;
+	@include bp($point_2) {
+		width: 1rem;
+		height: 1rem;
+		right: -2rem;
+	}
+	&:hover {
+		color: $dark;
+	}
+	svg {
+		width: 100%;
+		height: 100%;
+		@include flex-center;
+	}
+}
+.calc_summa {
+	border-top: .1rem  solid $gray1;
+	padding-top: 1.5rem;
+}
+.calc_summa_price {
+	font-size: 4rem;
+	color: $red;
+	font-family: $font_3;
+	margin-bottom: 4rem;
+	&:after {
+		font-family: $font_3;
+		content: ' ₽';
+	}
+}
+.calc_next_link {
+	a {
+		background-color: $dark;
+		color: $white;
+		justify-content: center;
+		p {
+			text-transform: none;
+		}
+	}
+}
+.calc_link_icon {
+}
+.icon {
+}
+.icon-arr-right {
+}

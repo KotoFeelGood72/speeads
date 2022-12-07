@@ -1,0 +1,148 @@
+.sidebar {
+	background-color: $dark;
+	color: $white;
+	box-shadow: 1.3rem .4rem 2.5rem rgba(0, 0, 0, 0.1);
+	a {
+		color: $white;
+	}
+}
+.sidebar_main {
+	min-width: $sidebar_width;
+	height: 100vh;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+
+.sidebar_main_list {
+}
+.sidebar_logo {
+	max-width: 12.8rem;
+	width: 100%;
+	@include flex-center;
+	margin: 2rem auto;
+	a {
+		@include flex-center;
+		width: 100%;
+		height: 100%;
+	}
+}
+.sidebar_nav {
+	margin-bottom: 5.1rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+	}
+	ul {
+		li {
+			&:first-child {
+				border-top: .1rem solid $black;
+			}
+			border-bottom: .1rem solid $black;
+		}
+	}
+}
+.nav_item {
+}
+.nav_item_link {
+	@include flex-start;
+	font-size: 1.6rem;
+	display: inline-flex;
+	width: 100%;
+	@include bp($point_2) {
+		font-size: 1.4rem;
+	}
+	a {
+		padding: 2.1rem 1rem;
+		@include flex-start;
+		width: 100%;
+		@include bp($point_2) {
+			padding: 1.5rem 1rem;
+		}
+	}
+	p {
+		display: inline-flex;
+		order: 1;
+		position: relative;
+	}
+}
+.nav_item_icon {
+	margin-right: 1.5rem;
+	.icon {
+		width: 2.6rem;
+		min-width: 2.6rem;
+		transition: all .3s ease;
+	}
+}
+
+.trigger_submenu  {
+	position: relative;
+	transition: all .3s ease;
+	&:after {
+		position: absolute;
+		content: '';
+		width: .6rem;
+		height: 1.1rem;
+		right: -2.2rem;
+		top: 50%;
+		transform: translateY(-50%);
+		background-image: url('../../i/global/arrow-menu.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
+
+.sidebar_lang {
+	padding: 0 1rem 2rem 1rem;
+	button {
+		@include flex-start;
+		@include app;
+		color: $white;
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		font-family: $font_2;
+		p {
+			margin-right: 1.5rem;
+		}
+	}
+}
+.sidebar_lang_country {
+	width: 2.6rem;
+	@include flex-center;
+	margin-right: 1rem;
+}
+.sidebar_lang_arr {
+	.icon {
+		width: .6rem;
+		@include flex-center;
+	}
+}
+
+
+.sidebar_w {
+	position: sticky;
+	top: 0;
+	left: 0;
+	max-height: 100%;
+	z-index: 103;
+	transition: all .5s ease;
+	@include bp($point_2) {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		max-width: 29rem;
+
+	}
+	&.active {
+		@include bp($point_2) {
+			left: 0;
+		}
+	}
+	.sidebar {
+		height: 100%;
+	}
+}
+
+
+

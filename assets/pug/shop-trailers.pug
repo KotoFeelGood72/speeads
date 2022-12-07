@@ -1,0 +1,23 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Shop Motors'}
+block content_block
+	+hero({
+		title: 'Каталог прицепов',
+		img: 'hero_4',
+	})
+	+shopRow({
+		title: `Бренд 1`,
+		mod: 'trailers_products_main',
+		h2: true,
+		count: 5,
+		img: 'products_2'
+	})
+	+shopRow({
+		title: `Бренд 2`,
+		mod: 'trailers_products_main',
+		h3: true,
+		count: 3,
+		img: 'products_2'
+	})
