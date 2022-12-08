@@ -86,11 +86,8 @@
 	@include flex-space;
 	font-size: 1.6rem;
 	@include bp($point_2) {
-		font-size: 1.1rem;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
-		grid-gap: 1.5rem .5rem;
-		max-height: 6.2rem
+		flex-direction: column;
+		font-size: 1.4rem;
 	}
 } 
 .footer_copyright {
