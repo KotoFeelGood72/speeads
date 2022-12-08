@@ -29,7 +29,7 @@
 	@include bp($point_2) {
 		grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
 	}
-	@include bp($point_7) {
+	@include bp($point_6) {
 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 	}
 	li {
