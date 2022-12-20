@@ -321,37 +321,7 @@ async function maps(street, city, size, mapSelector) {
 
 }
 
-// async function mapsChange(street, city, size, mapSelector) {
 
-// 	function init() {
-// 		const geocoder = ymaps.geocode(`${street} ${city}`);
-// 		geocoder.then(
-// 			async function (res) {
-// 				var maps = await new ymaps.Map(mapSelector, {
-// 						center: res.geoObjects.get(0).geometry.getCoordinates(),
-// 						zoom: 16,
-// 						scroll: false,
-// 					}, {
-// 						searchControlProvider: 'yandex#search'
-// 					}),
-// 					myPlacemark = new ymaps.Placemark(maps.getCenter(), {
-// 						balloonContent: `${street} ${city}`
-// 					}, {
-// 						iconLayout: 'default#image',
-// 						iconImageHref: '/i/global/map.svg',
-// 						iconImageSize: size,
-// 						iconImageOffset: [-5, -38]
-// 					});
-					
-
-// 					maps.geoObjects
-// 					.add(myPlacemark)
-// 			}
-// 		);
-// 	}
-// 	await ymaps.ready(init);
-
-// }
 function initTxtSlider() {
 	
 	let txtSlider = $("[data-slider-id]");
@@ -471,93 +441,6 @@ $(window).on("scroll", function () {
 });
 
 
-// ymaps.ready(init);
-// function init () {
-// 		var myMap = new ymaps.Map('map', {
-// 				center: [-33.867861, -63.988028],
-// 				zoom: 16
-// 		}),
-// 		objectManager = new ymaps.ObjectManager({
-// 		clusterize: true,
-// 		gridSize: 32
-// });   
-// 		myMap.geoObjects.add(objectManager);
-// 		objectManager.objects.options.set('preset', 'islands#redDotIcon');
-// myMap.geoObjects.add(objectManager);
-// 		objectManager.add({
-// 				"type": "FeatureCollection",
-// 				"features": [
-// 						{
-// 								"type": "Feature",
-// 								"id":1,
-// 								"geometry":{
-// 										"type": "Point",
-// 										"coordinates":[50.504268, 30.542315]
-// 								},
-// 								"properties":{
-// 			"balloonContent": 'Украина, Киев, парк Муромец',
-// 			"iconCaption": 'Украина, Киев, парк Муромец'
-// 								}
-// 						},{
-// 								"type": "Feature",
-// 								"id":2,
-// 								"geometry":{
-// 										"type": "Point",
-// 										"coordinates":[-33.867861, -63.988028]
-// 								},
-// 								"properties":{
-// 			"balloonContent": "Перейди гибридный вид карты и посмотри",
-// 			"iconCaption": "Провинция Кордова"
-// 								}
-// 						},{
-// 								"type": "Feature",
-// 								"id":3,
-// 								"geometry":{
-// 										"type": "Point",
-// 										"coordinates":[50.813802, -2.475569]
-// 								},
-// 								"properties":{
-// 			"balloonContent": "Перейди гибридный вид карты и посмотри",
-// 			"iconCaption": "Серн-Аббас"
-// 								}
-// 						}
-// 				]
-// 		});
-// /* 2. Обработка списка и меток */
-// //Клик по метке в карте
-// objectManager.objects.events.add('click', function (e) {
-// var objectId=e.get('objectId');
-// viewObject(objectId);
-// });
-// 		//Клик в списке
-// [].forEach.call(document.querySelectorAll('[data-objectId]'), function(el) {
-// el.addEventListener('click', function() {
-// 	var objectId=el.getAttribute("data-objectId");
-// 	viewObject(objectId);
-// });
-// });
-// // Что происходит при выборе метки или варианта из списка
-// function viewObject(objectId){
-// 				// Удаляем со всего списка класс active затем добавляем к выбранному
-// 	for (var object of document.querySelectorAll('[data-objectId]')) {
-// 	object.classList.remove('active');
-// }
-// document.querySelector('[data-objectId="'+objectId+'"]').classList.add('active');
-// 				// Выделяем все метки в синий, затем выбранную в красную
-// 				objectManager.objects.each(function (item) {
-// 						objectManager.objects.setObjectOptions(item.id, {
-// 								preset: 'islands#blueIcon'
-// 						});
-// 				});
-// 				objectManager.objects.setObjectOptions(objectId, {
-// 						preset: 'islands#redDotIcon'
-// 				});
-// 				// Центрирование по метке
-// 				myMap.setCenter(objectManager.objects.getById(objectId).geometry.coordinates, 15, {
-// 						checkZoomRange: true
-// 				});
-// }
-// }
 
 ymaps.ready(init);
 
@@ -568,185 +451,118 @@ function init() {
         }, {
             searchControlProvider: 'yandex#search'
         }),
-				menu = document.querySelector('.dillers_list') 
-    for (var i = 0, l = city.length; i < l; i++) {
-        createCity(city[i]);
+        menu = $('<ul class="dillers_list"></ul>');
+        
+    for (var i = 0, l = groups.length; i < l; i++) {
+        createMenuGroup(groups[i]);
     }
 
-
-    function createCity (city) {
-        var menuItem = $('<li><a href="#result">' + city['name'] + '</a></li>'),
-					collection = new ymaps.GeoObjectCollection(null, { preset: city.style }),
-				 placemark = new ymaps.Placemark(city.center, { balloonContent: city.name });
-				 collection.add(placemark);
+    function createMenuGroup (group) {
+        var menuItem = $('<li><a href="#result">' + group.name + '</a></li>'),
+            collection = new ymaps.GeoObjectCollection(null, { preset: group.style });
         myMap.geoObjects.add(collection);
         menuItem
             .appendTo(menu)
             .find('a')
-						.bind('click', function () {
-							if (!placemark.balloon.isOpen()) {
-									placemark.balloon.open();
-							} else {
-									placemark.balloon.close();
-							}
-							// return false;
-					});
+            .bind('click', function () {
+                if (collection.getParent()) {
+                    myMap.geoObjects.remove(collection);
+										// changeCity();
+
+                } else {
+                    myMap.geoObjects.add(collection);
+                }
+            });
+        for (var j = 0, m = group.items.length; j < m; j++) {
+            createSubMenu(group.items[j], collection);
+        }
     }
 
+    function createSubMenu (item, collection) {
+            placemark = new ymaps.Placemark(item.center, { balloonContent: item.name });
+        collection.add(placemark);
+    }
 
+    menu.appendTo($('.dillers_city_w'));
     myMap.setBounds(myMap.geoObjects.getBounds());
 }
 
 // Группы объектов
+var groups = [
+	{
+			name: "Известные памятники",
+			style: "islands#redIcon",
+			items: [
+					{
+							center: [50.426472, 30.563022],
+							name: "Монумент &quot;Родина-Мать&quot;"
+					},
+					{
+							center: [50.45351, 30.516489],
+							name: "Памятник &quot;Богдану Хмельницкому&quot;"
+					},
+					{
+							center: [50.454433, 30.529874],
+							name: "Арка Дружбы народов"
+					}
+			]},
+	{
+			name: "Покушайки",
+			style: "islands#greenIcon",
+			items: [
+					{
+							center: [50.50955, 30.60791],
+							name: "Ресторан &quot;Калинка-Малинка&quot;"
+					},
+					{
+							center: [50.429083, 30.521708],
+							name: "Бар &quot;Сало-бар&quot;"
+					},
+					{
+							center: [50.450843, 30.498271],
+							name: "Абсент-бар &quot;Палата №6&quot;"
+					},
+					{
+							center: [50.454834, 30.516498],
+							name: "Ресторан &quot;Спотыкач&quot;"
+					}
+			]},
+	{
+			name: "Оригинальные музейчики",
+			style: "islands#orangeIcon",
+			items: [
+					{
+							center: [50.443334, 30.520163],
+							name: "Музей грамзаписи и старинных музыкальных инструментов"
+					},
+					{
+							center: [50.446977, 30.505269],
+							name: "Музей истории медицины или Анатомический театр"
+					},
+					{
+							center: [50.452512, 30.530889],
+							name: "Музей воды. Водно-информационный центр"
+					}
+			]},
+	{
+			name: "Красивости",
+			style: "islands#blueIcon",
+			items: [
+					{
+							center: [50.45987, 30.516174],
+							name: "Замок Ричарда-Львиное сердце"
+					},
+					{
+							center: [50.445049, 30.528598],
+							name: "&quot;Дом с химерами&quot;"
+					},
+					{
+							center: [50.449156, 30.511809],
+							name: "Дом Рыцаря"
+					}
+			]}
+];
 
-let city = [
-
-	{
-		center: [45.020572, 38.974689],
-		name: "Краснодар",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.040711, 38.966384],
-		name: "Абакан",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.041747, 38.984149],
-		name: "Азов",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.036301, 38.981436],
-		name: "Абинск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Агидель",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Аркадак",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Аркадак",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Аркадак",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Аркадак",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Арсеньев",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Арсеньев",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Арсеньев",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Арсеньев",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Арсеньев",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Арсеньев",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Бабушкин",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Бабушкин",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-	{
-		center: [45.025187, 38.972275],
-		name: "Байкальск",
-		style: "islands#redIcon",
-	},
-]
 
 
 

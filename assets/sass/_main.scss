@@ -104,3 +104,21 @@ h1 {
 .btn {
 	display: inline-flex;
 }
+
+
+.top_slider_wrapp .flexslider .slides>li.image .img .wrap_plaxy img {
+	object-fit: contain;
+	width: 100%!important;
+	height: 100%!important;
+}
+
+@media(max-width: 767px) {
+	#mobilemenu .menu ul>li:first-child .arrow { 
+		display: none!important; 
+	}
+	.top_slider_wrapp .flexslider .slides>li.image .img .wrap_plaxy {
+		width: 100%!important;
+		height: 100%!important;
+		display: flex;
+	}
+}
