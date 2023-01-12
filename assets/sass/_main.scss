@@ -122,3 +122,18 @@ h1 {
 		display: flex;
 	}
 }
+
+.calc_form_row.no-valid {
+	position: relative;
+	&:before {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: -6.4rem;
+		width: calc(100% + 12.8rem);
+		height: calc(100% + 12rem);
+		content: '';
+		background-color: rgb(250, 191, 191);
+		z-index: -1;
+	}
+}
